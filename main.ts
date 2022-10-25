@@ -7,7 +7,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Ball, function (sprite, otherSpr
         otherSprite.left = sprite.right
         info.changeScoreBy(1)
     } else {
-        otherSprite.left = sprite.right
+        otherSprite.right = sprite.left
         info.player2.changeScoreBy(1)
     }
 })
@@ -52,7 +52,7 @@ function walls () {
         . . . . . . . . . . . 2 2 2 2 2 
         . . . . . . . . . . . 2 2 2 2 2 
         `, SpriteKind.Player)
-    controller.player1.moveSprite(Player_1, 0, 100)
+    controller.moveSprite(Player_1, 0, 100)
     Player_1.x = 0
     Player_1.setStayInScreen(true)
     info.setScore(0)
@@ -82,5 +82,5 @@ function walls () {
 let Player_2: Sprite = null
 let point: Sprite = null
 let Player_1: Sprite = null
-walls()
 create_ball()
+walls()
